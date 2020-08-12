@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="board.css"> 
+    <script>var boardX = 30; var boardY= 24; var currentElement; var currentCircut;</script>
+    <script src="scripts/tiles.js" ></script>
+    
+</head>
+<body>
+    <div id="main">
+        <div id="leftPanel">
+            <div id="board-container"></div>
+            <div id="buttonPanel">
+                <button class="changeInputs">Change Inputs1</button>
+                <button id="checkCircuit" class="checkOutputs">Check Circuit</button>
+            </div>
+            <div id="logPanel">
+                <button id="clearLog">Clear Log</button>
+                <div id="logs">
+                    <h2>Logs:</h2>
+                    <p>No Errors</p>
+                </div>
+            </div>
+        </div>
+        <div id="rightPanel">
+            <div id="paletteContainer"></div>
+            <div id="taskPanel">
+                <button id="openInfo">Theory</button>
+                <button onclick="window.location.href = `../main.html`;" id="home">Home</button>
+                <div id="taskContainer">
+                    <h2>Create half adder:</h2>
+                    <p>You can use truth tables provided in introduction
+                        to this tutorial.
+                        Use new gate provided (XOR)
+                        <br>
+                        Left output is carry .
+                    </p>           
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <div id="modalInfo" class="modal">
+        <div class="modalContent">
+          <span class="close">&times;</span>
+          <h1>Addition</h1>
+          <p>In introduction we mentioned that main purpose of computers is calculation, but at the same time we learned that what they actually do is simple 3 logic operations AND, OR, NOT.
+            In this tutorial we will learn how to use those operation to perform addition.  
+          </p>
+            <h2>Number representation</h2>
+            <p>As we know Boolean logic takes only two types inputs True and False. Computers represent them as voltage level, high –1 and low – 0, - this gives us already two numbers that we can work with and they are called binary.
+                If we think of decimal system which we are using every day we can say that it actually uses 10 numbers from 0 to 9. 
+                If we want to represent number higher than 9, we use two or more numbers in conjunction. Same way computers can represent numbers higher than 1, for example:
+            </p>
+            <img src="art/decimalNumbers.PNG">
+            <img src="art/binaryNumbers.PNG">
+            <p>Each digit in binary system we call bit. Number of bits computer can process at once defines maximum number it can represent. 
+                In computer architecture minimum number of bits used to represent any value is 8 (1 bait) and modern computers use 64 as nominal number of bits used to store data. 
+                In this tutorial we will focus on how computers perform operations rather than interpret their outcomes so this tutorial won’t cover how to convert binary to decimal or how negative and floating points numbers are represented. </p>
+            <h2>Binary addition</h2>
+            <p>Adding binary numbers is actually easier than adding them in binary because of lower range of numbers that can be added together (only 0s and 1s). Here is example comparison of both systems:</p>
+            <img src="art/decimalAddition.PNG">
+            <img src="art/binaryAddition.PNG">
+            <p>If we consider adding only 2 numbers in binary, we can only get 4 outcomes:</p>
+            <img src="art/additionOutcomes.PNG">
+            <p>If we construct separate tables for output1 and output2 we will get 2 truth tables: </p>
+            <img src="art/additionTruthTables.PNG">
+            <p>Circuit constructed this way is called half adder. (it can be built with use of gate which we constructed in previous tutorial).
+                In one of previous examples we got a situation when we add 1+1 + carry from previous addition, which makes 3 inputs for this addition. To solve this problem, we can divide this process into few smaller steps: we can construct truth tables for 2 inputs and additional ones comparing output with input3 and finally both carries from these operations: </p>
+            <img src="art/fullAdderTruthTables.PNG">
+            <p>As we can see final table has only 3 possibilities- that because positive outcomes exclude themselves for both caries. Circuit constructed this way is called half adder.
+                Finishing this task  will require building half adder and then using it to build full adder.
+            </p>
+        </div>
+    </div>
+    <div id="modalSuccess" class="modal">
+        <div id="modalPop" class="modalContent">
+            <h1>Task successful!</h1>
+            <h3>New Gate added:</h3>
+            <script>
+                let hA = HalfAdder.drawTile();
+                hA.style = "width: 50px; height: 50px;";
+                document.getElementById("modalPop").appendChild(hA);
+            </script>
+            <button id="nextTask">Next Task</button>
+        </div>
+    </div>
+
+
+  <script src="scripts/BoardGrid.js"></script>
+  <script src="scripts/palette.js"></script>
+  <script src="scripts/tutorial.js"></script>
+  <script src="tasks/task1.js"></script>
+
+</body>
+</html>

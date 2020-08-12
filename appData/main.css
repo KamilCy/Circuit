@@ -1,0 +1,441 @@
+body {
+    box-sizing: border-box;
+    background-color: aqua;
+    margin: 0;
+    padding: 0;
+    background: url('art/motherBoard-darkBlue.png') no-repeat center center fixed;
+    background-size: cover;
+
+
+}
+* {
+    box-sizing: border-box;
+}
+
+
+ #logoArt, #logoBottom, #logoRight, #topBoardHead, #topBoardWire, #topList, #leftWire, #rightWire, #leftList, #topBoardWireFoot, #bottom{
+    background-color: rgb(58, 60, 73);
+}
+
+
+#main {
+    width: 75vw;
+    height: 85vh;
+    min-width: 1400px;
+    min-height: 800px;
+    margin: auto;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0 0 5px rgb(175, 234, 238));
+}
+
+#top {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#logo {
+    width: 20%;
+}
+
+#logoContainer {
+    width: 100%;
+    display: flex;
+    height: 80.5%;
+}
+
+#logoArt {
+    width: 75%;
+    height: 100%;
+    position: relative;
+}
+
+#logoArtShadow {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(4px 3px 0 rgb(13, 107, 107));
+}
+
+#logoFrameTop {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(31, 200, 199);
+    clip-path: polygon(0 50%,0 20%, 15% 0, 85% 0, 100% 20%, 100% 50%, 90% 50%, 90% 25%, 83% 18%, 17% 18%, 10% 25%, 10% 50%);
+}
+
+#logoFrameBottom {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(31, 200, 199);
+    clip-path: polygon(0 20%,0 50%, 10% 50%, 10% 75%, 17% 82%, 83% 82%, 90% 75%, 90% 50%, 100% 50%, 100% 80%, 85% 100%, 15% 100%,0 80%);
+}
+
+#logoBrand {
+    font-size: 500%;
+    position: absolute;
+    top: 18%;
+    left: 19%;
+    color: rgb(31, 200, 199);
+}
+
+#logoBottom {
+    width: 80%;
+    height: 20%;
+}
+
+#logoRight {
+    width: 25%;
+    height: 100%;
+    padding-top: 13%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoWire {
+    width: 100%;
+    height: 2px;
+    margin-top: 3px;
+    background-color: rgb(31, 200, 199);
+    box-shadow: 0 0 5px white;
+}
+
+#topBoard {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+#topBoardHead {
+    width: 25%;
+    height: 20%;
+    display: inline-block;
+    padding-top: 2px;
+    font-size: 3vh;
+    font-weight: bold;
+    font-family:  Arial, Helvetica, sans-serif;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
+    color: rgb(31, 200, 199);
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+    filter: drop-shadow(0 0 10px white);
+}
+
+#topBoardBottom {
+    height: 80%;
+    width: 60%;
+    clip-path: polygon(0 0, 90% 0, 100% 35%, 100% 88%, 30% 88%, 30% 100%, 8% 100%, 8% 88%, 5% 76%, 0% 76%)
+}
+
+#topBoardWire {
+    height: 36%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.wire {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(31, 200, 199);
+}
+
+.wireShadow {
+    filter: drop-shadow(0 0 5px white);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#topWire1 {
+    z-index: 2;
+    clip-path: polygon(0 15%, 72% 15%, 75% 46%, 75% 100%, 74.5% 100%, 74.5% 46%, 72% 19.5%, 0 19.5%);
+}
+
+#topWire2 {
+    z-index: 3;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 26%, 52% 26%, 55% 56%, 55% 100%, 54.5% 100%, 54.5% 56%, 52% 31%, 0 31%);
+}
+
+#topWire3 {
+    z-index: 4;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 37%, 32% 37%, 35% 66%, 35% 100%, 34.5% 100%, 34.5% 66%, 32% 41%, 0 41%);
+}
+
+#topWire4 {
+    z-index: 5;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 47%, 12% 47%, 15% 76%, 15% 100%, 14.5% 100%, 14.5% 76%, 12% 51%, 0 51%);
+}
+
+#topNavBar {
+    height: 27%;
+}
+
+#topList {
+    height: 100%;
+    padding-left: 5%;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height:100%;
+}
+
+#topBoardWireFoot {
+    height: 37%;
+    width: 100%;
+    position: relative;
+}
+
+
+#footWire1 {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    clip-path: polygon(14.5% 0, 15% 0, 15% 100%, 14.5% 100%);
+}
+
+#footWire2 {
+    z-index: 3;
+    top: 0;
+    left: 0;
+    clip-path: polygon(34.5% 0, 35% 0, 35% 19%, 18% 19%, 18% 100%, 17.5% 100%, 17.5% 16%, 34.5% 16%);
+}
+
+#footWire3 {
+    z-index: 4;
+    top: 0;
+    left: 0;
+    clip-path: polygon(54.5% 0, 55% 0, 55% 36%, 21% 36%, 21% 100%, 20.5% 100%, 20.5% 33%, 54.5% 33%);
+}
+
+#footWire4 {
+    z-index: 5;
+    top: 0;
+    left: 0;
+    clip-path: polygon(74.5% 0, 75% 0, 75% 53%, 24% 53%, 24% 100%, 23.5% 100%, 23.5% 50%, 74.5% 50%);
+}
+
+#center {
+    display: flex;
+    height: 70%;
+}
+
+#leftBoard {
+    display: flex;
+    width: 20%;
+}
+
+#leftWire {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+#rightWire {
+    width: 20%;
+    height: 100%;
+    position: relative;
+}
+
+#leftNavBar {
+    width: 40%;
+    height: 100%;
+}
+
+#leftList {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+}
+
+#leftWire1 {
+    top: -5.5%;
+    z-index: 2;
+    clip-path: polygon(88% 0, 91% 0, 91% 10%, 100% 10%, 100% 10.5%, 88% 10.5%)
+}
+
+#leftWire2 {
+    top: -5.5%;
+    z-index: 3;
+    clip-path: polygon(78% 0, 81% 0, 81% 18%, 100% 18%, 100% 18.5%, 78% 18.5%)
+}
+
+#leftWire3 {
+    top: -5.5%;
+    z-index: 3;
+    clip-path: polygon(68% 0, 71% 0, 71% 26.5%, 100% 26.5%, 100% 27%, 68% 27%)
+}
+
+#leftWire4 {
+    top: -5.5%;
+    z-index: 3;
+    clip-path: polygon(58% 0, 61% 0, 61% 34.5%, 100% 34.5%, 100% 35%, 58% 35%)
+}
+
+
+#leftWire5 {
+    top: -6%;
+    z-index: 3;
+    clip-path: polygon(48% 0, 51% 0, 51% 43%, 100% 43%, 100% 43.5%, 48% 43.5%)
+}
+
+#rightWire1 {
+    z-index: 2;
+    clip-path: polygon(0 4.5%, 85% 4.5%, 85% 100%, 82% 100%, 82% 5%, 0 5% );
+}
+
+#rightWire2 {
+    z-index: 2;
+    clip-path: polygon(0 12.5%, 70% 12.5%, 70% 100%, 67% 100%, 67% 13%, 0 13% );
+}
+
+#rightWire3 {
+    z-index: 2;
+    clip-path: polygon(0 20.5%, 55% 20.5%, 55% 100%, 52% 100%, 52% 21%, 0 21% );
+}
+
+#rightWire4 {
+    z-index: 2;
+    clip-path: polygon(0 28.5%, 40% 28.5%, 40% 100%, 37% 100%, 37% 29%, 0 29% );
+}
+
+#rightWire5 {
+    z-index: 2;
+    clip-path: polygon(0 36.5%, 25% 36.5%, 25% 100%, 22% 100%, 22% 37%, 0 37% );
+}
+
+#centerContainer {
+    width: 80%;
+}
+
+#screenShadow {
+    width: 80%;
+    height: 95%;
+
+}
+
+#screen {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    font-size: large;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5%;
+    border-color: rgb(31, 200, 199);
+    box-shadow: 0 0  10px rgb(31, 200, 199) inset;
+
+}
+
+#bottom {
+    display: flex;
+    height: 10%;
+    width: 80%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+}
+
+#bottomWire {
+    width: 95%;
+    height: 100%;
+    position: relative;
+}
+
+#bottomWire1 {
+    z-index: 2;
+    clip-path: polygon(20.2% 0, 20.3% 0, 20.3% 20%, 100% 20%, 100% 22%, 20.2% 22% );
+}
+
+#bottomWire2 {
+    z-index: 2;
+    clip-path: polygon(19.4% 0, 19.5% 0, 19.5% 35%, 100% 35%, 100% 37%, 19.4% 37% );
+}
+
+#bottomWire3 {
+    z-index: 2;
+    clip-path: polygon(18.6% 0, 18.7% 0, 18.7% 50%, 100% 50%, 100% 52%, 18.6% 52% );
+}
+
+#bottomWire4 {
+    z-index: 2;
+    clip-path: polygon(17.8% 0, 17.9% 0, 17.9% 65%, 100% 65%, 100% 67%, 17.8% 67% );
+}
+
+#bottomWire5 {
+    z-index: 2;
+    clip-path: polygon(17% 0, 17.1% 0, 17.1% 80%, 100% 80%, 100% 82%, 17% 82% );
+}
+
+#bottomEnd {
+    width: 5%;
+    padding-top: 1%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottomEndBulb {
+    margin-top: 2px;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-color: rgb(31, 200, 199);
+    border-width: 2px;
+    border-radius: 50%;
+}
+
+.bottomEndBulbOn {
+    background-color: rgb(31, 200, 199);
+}
+
+.navButton {
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 5px;
+    text-align: center;
+    width: 19%;
+    min-width: 100px;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-radius: 10px;
+    font-weight: bold;
+    border-color: rgb(31, 200, 199);
+    cursor: pointer;
+}
+
+
+.navButtonLeft {
+    width: 100%;
+    margin-top: 10%;
+}
+
+.buttonHover {
+    color: rgb(31, 200, 199);
+}
+
+.buttonActive {
+    color: rgb(31, 200, 199);
+}

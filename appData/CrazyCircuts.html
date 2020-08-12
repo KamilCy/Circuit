@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="board.css"> 
+    <script>var boardX = 30; var boardY= 24; var currentElement; var currentCircut;</script>
+    <script src="scripts/tiles.js" ></script>
+    
+</head>
+<body>
+    <div id="main">
+        <div id="leftPanel">
+            <div id="board-container"></div>
+            <div id="buttonPanel">
+                <button class="changeInputs">Change Inputs1</button>
+                <button class="changeInputs">Change Inputs2</button>
+                <button class="changeInputs">Change Inputs3</button>
+                <button id="checkCircuit" class="checkOutputs">Check Circuit</button>
+            </div>
+            <div id="logPanel">
+                <button id="clearLog">Clear Log</button>
+                <div id="logs">
+                    <h2>Logs:</h2>
+                    <p>No Errors</p>
+                </div>
+            </div>
+        </div>
+        <div id="rightPanel">
+            <div id="paletteContainer"></div>
+            <div id="taskPanel">
+                <button id="openInfo">Back to Info</button>
+                <div id="taskContainer">
+                    <h2>Create 3 circuits:</h2>
+                    <p>Left circuit truth table is:</p>
+                    <table class="taskTable">
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>A&B</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>                    
+                    <p>Middle circuit table is:</p>
+                    <table class="taskTable">
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>A|B</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </table>                    
+                    <p>Right circuit truth table is:</p>
+                    <table class="taskTable">
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>!(A&B)</th>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>0</td>
+                        </tr>
+                    </table>                    
+                    <p>(it requires to use 2 gates)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <div id="modalInfo" class="modal" style="display: none">
+        <div class="modalContent">
+          <span class="close">&times;</span>
+          <h1>Computer Architecture Introduction</h1>
+          <p>In order to understand computers and how they work we need to get back to reasons for which they were invented.<br>
+            Computer is a machine that can be instructed to carry out sequences of arithmetic or logical operations. Nowadays computers evolved so much that it seems impossible to grasp the logic which works behind the scenes. 
+            Truth is that architecture of computers didn’t change much since first generation of computers 75 years ago. Since then we managed to produce smaller and better-quality parts which increased processing power and memory capacities but didn’t really change how computers work – they still perform simple arithmetic and logical operations.
+            Designing more advanced programs enabled translating real live problems into mathematical operations, produced outcomes are presented as solutions for those problems. This approach allowed computers to be used in every aspect of human life but at same time preserved core principles that were used in inventing first unit. <br>
+            Objective of this course is presentation of mentioned principles and how are they used in computer construction. </p>
+            <h1>Boolean Logic</h1>
+            <p>In order for computers to perform logic and algebraic operations, problems need to be translated into computer language which is Boolean algebra.
+                 This language uses variables that take only two possible values which are true and false. Main operations of Boolean algebra are the conjunction (and) denoted as ∧, the disjunction (or) denoted as ∨, and the negation (not) denoted as ¬.  To make it easier to understand we will use example:<br>
+                 Two variables are two persons: Mark and Peter, lets consider a case where they go to shop, the values which they can take are: went to shop, or didn’t go to shop (true or false), operation AND would be question: did they both go to shop? 
+                 Answer for this question would be only TRUE if Peter went to shop(true) and Mark went to shop(true). There might be different cases were only one of them went to shop or none of them went to shop, which outcome for the operation would be FALSE. All those cases can be presented in Truth tables: <br> </p>
+            <img src="art/TableAND.PNG">
+            <p>If we ask different question: Did Mark or Peter went to shop? We would construct OR operation which outcome would be true if any one of them went to shop or both went to shop, and table would look like: </p>
+            <img src="art/TableOR.PNG">
+            <p>Negation is used to change single value to its opposite so table would look like:</p>
+            <img src="art/TableNOT.PNG">
+            <p>Those three basic operations are basic fundamentals on which all computer logic is built on.<br>
+                   To implement Boolean logic into computers we use electric currents which are represented as True for high voltage and False for low voltage. Operations are different type of transistors which connected to inputs will produce output as high or low voltage respectively to operation they represent. Those transistors are called gates and their symbols are: </p>
+            <div style="display: inline-block; margin-right: 20px;">
+                <img src="art/andGate.png" style="width: 100ox; height: 150px;">
+                <p>AND Gate</p>
+            </div>
+            <div style="display: inline-block; margin-right: 20px;">
+                <img src="art/orGateWeb.png" style="width: 100px; height: 150px;">
+                <p>OR Gate</p>
+            </div>
+            <div style="display: inline-block; margin-right: 20px;">
+                <img src="art/notGateWeb.png" style="width: 100px; height: 150px;">
+                <p>NOT Gate</p>
+            </div>
+            <p>So far, we mentioned only 3 type of operations – 2 basic and 1 negation. In next tutorials we will use other operations all of which can be constructed with use of AND OR NOT operands. <br>
+                In this tutorial we will connect 3 basic gates to inputs and outputs to observe how they respond to input changes and create more advanced XOR gate. </p>
+        </div>
+    </div>
+    <div id="modalSuccess" class="modal">
+        <div id="modalPop" class="modalContent">
+            <h1>Task successful!</h1>
+            <button id="nextTask">Next Task</button>
+        </div>
+    </div>
+
+
+  <script src="scripts/BoardGrid.js"></script>
+  <script src="scripts/palette.js"></script>
+  <script src="scripts/tutorial.js"></script>
+  <script src="tasks/test.js"></script>
+
+</body>
+</html>
